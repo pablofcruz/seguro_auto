@@ -1,0 +1,68 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title>
+      Compra soap 2018
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar color="primary" id="segmentToolbar" no-border-top>
+    <ion-segment color="light" [(ngModel)]="soapSwitch" id="#segmentToolbar">
+      <ion-segment-button value="paso1">
+        <h2>1</h2> Datos del vehiculo
+      </ion-segment-button>
+      <ion-segment-button value="paso2" disabled="{{!mostrarOpciones2}}">
+        <h2>2</h2> Formulario
+      </ion-segment-button>
+      <ion-segment-button value="paso3" disabled="{{!mostrarOpciones3}}">
+        <h2>3</h2> Resultado
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding overflow-scroll="true" [ngSwitch]="soapSwitch"  >
+    <form [formGroup]="comprarSoap" novalidate>
+        <div center text-center *ngSwitchCase="'paso1'">
+            <ion-list-header>Datos Persolanes</ion-list-header>
+            <ion-item>
+              <ion-label color="primary" floating><span class="obligatorio">*</span>Rut</ion-label>
+              <ion-input type="text"  [(ngModel)]="vehiculo.rut" formControlName="rut"  maxlength="10" minlength="5"></ion-input>
+            </ion-item>
+            <ion-list-header>Datos del vehiculo</ion-list-header>
+            <ion-item>
+                <ion-label color="primary" floating><span class="obligatorio">*</span>Patente</ion-label>
+                <ion-input type="text"  [(ngModel)]="vehiculo.patente" formControlName="patente"  maxlength="10" ></ion-input>
+              </ion-item>
+          </div>
+          <div center text-center *ngSwitchCase="'paso2'">
+            <ion-list-header>Detalle del vehiculo</ion-list-header>
+            <ion-item>
+              <ion-label color="primary" floating><span class="obligatorio">*</span>Año</ion-label>
+              <ion-input type="text"  [(ngModel)]="vehiculo.ano_fab" formControlName="ano_fab"  maxlength="10">{{vehiculo.ano_fab}}</ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" floating><span class="obligatorio">*</span>Marca</ion-label>
+                <ion-input type="text"  [(ngModel)]="vehiculo.marca" formControlName="marca"  maxlength="30" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" floating><span class="obligatorio">*</span>Modelo</ion-label>
+                <ion-input type="text"  [(ngModel)]="vehiculo.modelo" formControlName="modelo"  maxlength="30" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" floating><span class="obligatorio">*</span>Numero de motor</ion-label>
+                <ion-input type="text"  [(ngModel)]="vehiculo.nro_motor" formControlName="nro_motor"  maxlength="20" ></ion-input>
+              </ion-item>
+          </div>
+    </form>
+</ion-content>
+<ion-footer align="button">
+  <ion-toolbar color="secondary">
+    <ion-buttons end>
+      <!--<button ion-button type="submit" icon-right color="royal">-->
+      <button ion-button (click)="siguiente(comprarSoap.value, comprarSoap.valid)" icon-right color="royal">
+        Siguiente
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

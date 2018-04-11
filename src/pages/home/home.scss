@@ -1,0 +1,114 @@
+page-home {
+    .toolbar-background-md {
+        border-color: #004292;
+        background: #004292;
+    }
+    .content-wp .scroll-content {
+        padding: 0px 15px !important;
+      }
+    
+      .error-container {
+        margin: 5px 0;
+      }
+    
+      .error-container:last-child {
+        margin: 5px 0 0;
+      }
+    
+      /*
+      .error {
+        padding: 10px 16px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #555;
+        vertical-align: middle;
+      }
+      */
+    
+      .error i {
+        font-size: 24px;
+        color: #B83E2C;
+        vertical-align: middle;
+      }
+    
+      .last-error-container > .error {
+        padding: 10px 16px 0;
+      }
+    
+      .has-errors {
+        border-bottom: 3px solid #B83E2C;
+      }
+    
+      .no-errors {
+        border-bottom: 3px solid green;
+      }
+    
+      .item-ios {
+        background-color: #ffffff;
+      }
+    
+      .label-md {
+        margin: 13px 8px 13px 8px;
+      }
+    
+      .select-md {
+        padding: 12px 8px 13px 8px;
+      }
+    
+      .select-ios {
+        padding: 12px 8px 13px 0px;
+      }
+    
+      .toolbar-title-md, .toolbar-title-ios, .toolbar-title-wp{
+        color: #dfe8ed !important;
+      }
+    
+      .segment-ios-light .segment-button {
+       padding: 0px 5px;
+      }
+    
+      #comprarSoap {
+        padding: 25px 0px;
+      }
+    
+      #comprarSoap div {
+        height: 100%;
+      }
+    
+      .segment-button {
+        max-width: 155px !important;
+        height: 70px !important;
+        padding: 0px 3px!important;
+      }
+    
+      .segment-ios .segment-button {
+        height: 60px !important;
+        max-width: 110px !important;
+        padding: 5px 5px!important;
+      }
+    
+      .segment-wp .segment-button {
+        padding: 0px 6px !important;
+      }
+    
+      .segment-button {
+        h2{
+          margin: 0px;
+        }
+      }
+    
+      #segmentToolbar {
+        height: 75px;
+        .segment-button * {
+          color: map_get($colors, light);
+        }
+        .segment-ios .segment-activated * {
+          color: map_get($colors,primary);
+        }
+      }
+    
+      .obligatorio {
+        color:red;
+      }
+}
